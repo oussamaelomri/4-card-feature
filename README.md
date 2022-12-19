@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/oussamaelomri/4-card-feature)
-- Live Site URL: [Live](https://your-live-site-url.com)
+- Live Site URL: [Live](https://oussamaelomri.github.io/4-card-feature/)
 
 ## My process
 
