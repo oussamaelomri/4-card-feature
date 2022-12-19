@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+/* Start Variables */
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+/* End Variables */
+
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9375rem;
+    background-color: var(--Very-Light-Gray);
+    margin-block: 2.5rem;
+}
+/* End Global Rules */
+/* Start Main */
+main {
+    max-width: 62.5rem;
+    margin-inline: 1.875rem;
+    margin-bottom: 1.25rem;
+}
+main > p {
+    text-align: center;
+    max-width: 23.125rem;
+    margin-inline: auto;
+    margin-block: 0.9375rem 2.5rem;
+    font-size: 0.8em;
+}
+main p {
+    color: var(--Grayish-Blue);
+}
+main .heading h1 {
+    width: fit-content;
+    margin-inline: auto;
+    font-weight: lighter;
+    color: var(--Very-Dark-Blue);
+    text-align: center;
+}
+main .heading h1 span {
+    display: block;
+    font-weight: bold;
+}
+main .content { 
+    display: grid;
+    grid-template-columns: repeat(3, minmax(18.75rem, 1fr));
+    gap: 1.875rem;
+    align-items: center;
+}
+main .content .middle .box:first-child {
+    margin-bottom: 1.875rem;
+}
+main .content .box {
+    height: 15.625rem;
+    border: 0.0625rem solid #EEE;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    position: relative; 
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+}
+main .content .box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0.3125rem;
+}
+main .content .box.cyan::after {
+    background-color: var(--Cyan);
+}
+main .content .box.red::after {
+    background-color: var(--Red);
+}
+main .content .box.orange::after {
+    background-color: var(--Orange);
+}
+main .content .box.blue::after {
+    background-color: var(--Blue);
+}
+main .content .box h2,
+main .content .box p {
+    margin: 1.25rem;
+}
+main .content .box h2 {
+    color: var(--Very-Dark-Blue);
+}
+main .content .box img {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+
+}
+@media (max-width: 62.5rem) {
+    main .content {
+        grid-template-columns: repeat(2, minmax(18.75rem, 21.875rem)) ;
+        grid-template-areas: 
+            "part1 part2"
+            "part3 part2";
+    }
+    main .content .left {
+        grid-area: part1;
+    }
+    main .content .middle {
+        grid-area: part2;
+    }
+    main .content .right {
+        grid-area: part3;
+    }
+}
+@media (max-width: 47.9375rem) {
+    main .content {
+        grid-template-columns: minmax(16.875rem, 28.125rem);
+        grid-template-areas: 
+                        "part1"
+                        "part2"
+                        "part3";
+        
+    }
+}
+/* End Main */
